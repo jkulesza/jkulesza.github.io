@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3mod.css">
-<link rel="stylesheet" href="css/lato.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <style>
 
@@ -25,7 +24,7 @@ body, html {
 
 div.transbox {
     padding: 64px;
-    background-color: #222222aa;
+    background-color: #000000aa;
     border: 1px solid black;
     opacity: 1.0;
     filter: alpha(opacity=100); /* For IE8 and earlier */
@@ -42,22 +41,8 @@ div.transbox {
 
 /* First image (Logo) */
 .bgimg-1 {
-    background-image: url('img/header_page.jpg');
+    background-image: url('img/logo_print_sq.png');
     min-height: 100%;
-}
-
-.bgimg-1:after{
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  bottom   : 0;
-  left     : 0;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                    rgba(34,34,34, 0),
-                    rgba(34,34,34, 1) 90%);
-  width    : 100%;
-  height   : 4em;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -67,49 +52,28 @@ a:link {
   text-decoration: none;
 }
 
-$(window).scroll(function() {
-  $(".bgimg-1 img").css({
-    'opacity': 1 - (($(this).scrollTop()) / 250)
-  });
-});
-
 </style>
 
-<body id="#top">
+<body>
 
 <!-- First Parallax Image with Logo -->
 <div class="bgimg-1 w3-display-container w3-padding-32">
   <div class="w3-display-middle" style="white-space:nowrap;">
-
     <div class="w3-center transbox">
-      <img style="width:100%" src="img/logo_print_sq.png">
-    </div>
+      <iframe src="https://snapwidget.com/embed/807396" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:500px; height:500px"></iframe>
+      <div class="w3-center w3-xxlarge w3-padding-32">
+        <a href="https://www.facebook.com/ScienceFair"><i class="fab fa-facebook w3-hover-opacity" style="color: #4a5a94"></i></a>&nbsp;&nbsp;
+        <a href="https://www.twitter.com/TheScienceFair"><i class="fab fa-twitter w3-hover-opacity" style="color: #4ba1ec"></i></a>&nbsp;&nbsp;
+        <a href="https://www.instagram.com/thesciencefairmusic/"><i class="fab fa-instagram w3-hover-opacity" style="color: #f2ad5c"></i></a>&nbsp;&nbsp;
+        <a href="https://www.youtube.com/user/TheScienceFairMusic"><i class="fab fa-youtube w3-hover-opacity" style="color: #eb3323"></i></a>&nbsp;&nbsp;
 
-    <div class="w3-center w3-padding-32">
-      <div class="w3-xlarge">
-        <a href="https://www.facebook.com/ScienceFair"><i class="fab fa-facebook w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://www.twitter.com/TheScienceFair"><i class="fab fa-twitter w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://www.instagram.com/thesciencefairmusic/"><i class="fab fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://www.youtube.com/user/TheScienceFairMusic"><i class="fab fa-youtube w3-hover-opacity"></i></a>&nbsp;&nbsp;
-
-        <a href="https://open.spotify.com/artist/1PzQVydHVHD06W9tEYr4QL"><i class="fab fa-spotify w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://music.apple.com/us/artist/the-science-fair/271346577"><i class="fab fa-apple w3-hover-opacity"></i></a>&nbsp;&nbsp;
-        <a href="https://music.amazon.com/artists/B00H34P2M2?ref=dm_sh_6490-8038-dmcp-c407-86d26&musicTerritory=US&marketplaceId=ATVPDKIKX0DER"><i class="fab fa-amazon w3-hover-opacity"></i></a>
+        <a href="https://open.spotify.com/artist/1PzQVydHVHD06W9tEYr4QL"><i class="fab fa-spotify w3-hover-opacity" style="color: #58b560"></i></a>&nbsp;&nbsp;
+        <a href="https://music.apple.com/us/artist/the-science-fair/271346577"><i class="fab fa-apple w3-hover-opacity" style="color: #ffffff"></i></a>&nbsp;&nbsp;
+        <a href="https://music.amazon.com/artists/B00H34P2M2?ref=dm_sh_6490-8038-dmcp-c407-86d26&musicTerritory=US&marketplaceId=ATVPDKIKX0DER"><i class="fab fa-amazon w3-hover-opacity" style="color: #f29d39"></i></a>
       </div>
-    </div>
-    <div class="w3-center w3-padding-32" >
-      <a href="#instagramfeed">
-        <i class="fa fa-2x fa-arrow-circle-down" style="color: #ffffffaa"></i>
-      </a>
     </div>
   </div>
 </div>
-
-<center>
-  <div class="w3-padding-32" id="instagramfeed">
-    <iframe src="https://snapwidget.com/embed/807396" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:500px; height:500px"></iframe>
-  </div>
-</center>
 
 </body>
 </html>
