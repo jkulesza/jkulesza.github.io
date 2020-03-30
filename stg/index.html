@@ -5,82 +5,75 @@
 <link rel="icon" href="https://jkulesza.github.io/stg/img/logo_print_sq.png">
 </head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3mod.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <style>
 
-body,h1,h2,h3,h4,h5,h6 {
-    background: #222222;
-    font-family: "Lato", sans-serif;
-    color: #dddddd;
-}
+  body, html {
+      height: 100%;
+      color: #dddddd;
+      line-height: 1.8;
+  }
 
-body, html {
-    height: 100%;
-    color: #dddddd;
-    line-height: 1.8;
-}
+  div.transbox {
+      padding-top: 32px;
+      padding-right: 0px;
+      padding-bottom: 32px;
+      padding-left: 0px;
+      background-color: #000000aa;
+      border: 1px solid black;
+      opacity: 1.0;
+      filter: alpha(opacity=100); /* For IE8 and earlier */
+      width: calc(85vmin);
+  }
 
-div.transbox {
-    padding: 64px;
-    background-color: #000000aa;
-    border: 1px solid black;
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
-    width: calc(66vmin);
-}
+  /* Create a Parallax Effect */
+  .bgimg-1 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('img/logo_print_sq.png');
+      min-height: 100%;
+  }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+  .w3-wide {letter-spacing: 10px;}
+  .w3-hover-opacity {cursor: pointer;}
 
-/* First image (Logo) */
-.bgimg-1 {
-    background-image: url('img/logo_print_sq.png');
-    min-height: 100%;
-}
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-a:link {
-  text-decoration: none;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 500px){
-    .modal-content {
-        width: 100%;
-    }
-}
+  a:link {
+    text-decoration: none;
+  }
 
 </style>
 
-<body>
+<body onload="adaptSize()" onresize="adaptSize()">
 
-<!-- First Parallax Image with Logo -->
-<div class="bgimg-1 w3-display-container w3-padding-32">
+<div class="bgimg-1 w3-display-container">
   <div class="w3-display-middle" style="white-space:nowrap;">
     <div class="w3-center transbox">
-      <iframe src="https://snapwidget.com/embed/807396" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:500px; height:500px"></iframe>
-      <div class="w3-center w3-xxlarge w3-padding-32">
-        <a href="https://www.facebook.com/ScienceFair"><i class="fab fa-facebook w3-hover-opacity" style="color: #4a5a94"></i></a>&nbsp;&nbsp;
-        <a href="https://www.twitter.com/TheScienceFair"><i class="fab fa-twitter w3-hover-opacity" style="color: #4ba1ec"></i></a>&nbsp;&nbsp;
-        <a href="https://www.instagram.com/thesciencefairmusic/"><i class="fab fa-instagram w3-hover-opacity" style="color: #f2ad5c"></i></a>&nbsp;&nbsp;
-        <a href="https://www.youtube.com/user/TheScienceFairMusic"><i class="fab fa-youtube w3-hover-opacity" style="color: #eb3323"></i></a>&nbsp;&nbsp;
-
-        <a href="https://open.spotify.com/artist/1PzQVydHVHD06W9tEYr4QL"><i class="fab fa-spotify w3-hover-opacity" style="color: #58b560"></i></a>&nbsp;&nbsp;
-        <a href="https://music.apple.com/us/artist/the-science-fair/271346577"><i class="fab fa-apple w3-hover-opacity" style="color: #ffffff"></i></a>&nbsp;&nbsp;
+      <iframe id="feed" style="border:none; overflow:hidden;" src="https://snapwidget.com/embed/807396" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+      <div class="w3-center w3-xxlarge">
+        <a href="https://www.facebook.com/ScienceFair"><i class="fab fa-facebook w3-hover-opacity" style="color: #4a5a94"></i></a>
+        <a href="https://www.twitter.com/TheScienceFair"><i class="fab fa-twitter w3-hover-opacity" style="color: #4ba1ec"></i></a>
+        <a href="https://www.instagram.com/thesciencefairmusic/"><i class="fab fa-instagram w3-hover-opacity" style="color: #f2ad5c"></i></a>
+        <a href="https://www.youtube.com/user/TheScienceFairMusic"><i class="fab fa-youtube w3-hover-opacity" style="color: #eb3323"></i></a>
+        <a href="https://open.spotify.com/artist/1PzQVydHVHD06W9tEYr4QL"><i class="fab fa-spotify w3-hover-opacity" style="color: #58b560"></i></a>
+        <a href="https://music.apple.com/us/artist/the-science-fair/271346577"><i class="fab fa-apple w3-hover-opacity" style="color: #ffffff"></i></a>
         <a href="https://music.amazon.com/artists/B00H34P2M2?ref=dm_sh_6490-8038-dmcp-c407-86d26&musicTerritory=US&marketplaceId=ATVPDKIKX0DER"><i class="fab fa-amazon w3-hover-opacity" style="color: #f29d39"></i></a>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function adaptSize() {
+    let x = Math.min( 500, 0.8 * Math.min( window.innerWidth, window.innerHeight ) );
+    let xs = '';
+    xs = xs.concat( x.toString(), "px" );
+    document.getElementById("feed").style.width = xs;
+    document.getElementById("feed").style.height= xs;
+  }
+</script>
 
 </body>
 </html>
